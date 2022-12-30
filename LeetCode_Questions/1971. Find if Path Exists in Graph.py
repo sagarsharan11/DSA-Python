@@ -17,7 +17,10 @@ class Solution(object):
         :type destination: int
         :rtype: bool
         """
-        pass
+        for i in range(n):
+            src = edges[i][0]
+            dest = edges[i][1]
+            
         return 0
 
 if __name__=="__main__":
