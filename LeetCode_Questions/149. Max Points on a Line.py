@@ -4,12 +4,6 @@
 # Input: points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]
 # Output: 4
 
-"""
-Approach:
-1.
-2.
-3.
-"""
 
 def maxPoints(points):
     maxCount = 0
@@ -41,6 +35,9 @@ def maxPoints(points):
             maxCount = len(set(points_dict[i]))
     
     return maxCount
+### TC --> O(n^2)
+
+
 
 
 if __name__ == "__main__":
