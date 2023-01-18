@@ -7,18 +7,30 @@
 
 
 ### Brute Force Approach
+# def insert(intervals, newInterval):
+    # result = []
+    # for i in range(len(intervals)):
+    #     if newInterval[1] < intervals[i][0]:
+    #         result.append(newInterval)
+    #         return result + intervals[i:]
+    #     elif newInterval[0] > intervals[i][1]:
+    #         result.append(intervals[i])
+    #     else:
+    #         newInterval = [min(newInterval[0], intervals[i][0]), max(newInterval[1], intervals[i][1])]
+    # result.append(newInterval)
+    # return result
+
+### Another Approach
 def insert(intervals, newInterval):
-    result = []
-    for i in range(len(intervals)):
-        if newInterval[1] < intervals[i][0]:
-            result.append(newInterval)
-            return result + intervals[i:]
-        elif newInterval[0] > intervals[i][1]:
-            result.append(intervals[i])
-        else:
-            newInterval = [min(newInterval[0], intervals[i][0]), max(newInterval[1], intervals[i][1])]
-    result.append(newInterval)
-    return result
+    start, end = newInterval[0], newInterval[1]
+    left = [i for i in intervals if i[1] < start]
+    right = [i for i in intervals if i[0] > end]
+    if left + right != intervals:
+        start = min(start, intervals[len(left)][0])
+        end = max(end, intervals[~len(right)][1])
+    return left + [[start, end]] + right
+
+
 
 
 
