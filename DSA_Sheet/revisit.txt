@@ -1,0 +1,9 @@
+Arrays:
+1 | 121 | 
+
+
+
+
+Misc:
+-> 2 pointer approach - fast moves 2 step and slow moves 1 step at a time
+-> 
